@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>登录界面 - 笛子供应链</title>
+  <style>
+    body { background: #f5f7fa; font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; }
+    .login-container { width: 400px; margin: 80px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px #e0e0e0; padding: 40px 32px; }
+    h2 { color: #2d8cf0; text-align: center; }
+    .form-group { margin-bottom: 24px; }
+    label { display: block; margin-bottom: 8px; color: #333; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #dcdcdc; border-radius: 5px; font-size: 16px; }
+    button { width: 100%; padding: 12px; background: #2d8cf0; color: #fff; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #19be6b; }
+    .tip { color: #888; font-size: 14px; text-align: center; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>登录 - 笛子供应链</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="role">选择角色</label>
+        <select id="role" name="role" required>
+          <option value="">请选择</option>
+          <option value="manager">采购总经理</option>
+          <option value="dev">资源开发</option>
+          <option value="supplier">供应商</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="username">账号</label>
+        <input type="text" id="username" name="username" required placeholder="请输入账号" value="demo" />
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" id="password" name="password" required placeholder="请输入密码" value="123456" />
+      </div>
+      <button type="submit">登录</button>
+    </form>
+    <div class="tip">假数据：账号 demo / 密码 123456 / 任意角色</div>
+  </div>
+  <script>
+    document.getElementById('loginForm').onsubmit = function(e) {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      if (!role) { alert('请选择角色'); return; }
+      window.location.href = 'chat-home.html?role=' + role;
+    };
+  </script>
+</body>
+</html> 
