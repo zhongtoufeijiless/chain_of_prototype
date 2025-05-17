@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>设置中心 - 笛子供应链</title>
+  <style>
+    body { background: #fff; font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; margin:0; }
+    .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px #e0e0e0; padding: 40px 32px; }
+    h2 { color: #2d8cf0; margin-bottom: 24px; }
+    ul { font-size: 18px; line-height: 2; color: #333; }
+    li { margin-bottom: 8px; }
+    .tip { color: #888; font-size: 14px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>设置中心（可拓展）</h2>
+    <script>
+      // 解析URL参数
+      function getQueryParams() {
+        const params = {};
+        window.location.search.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => params[k] = decodeURIComponent(v));
+        return params;
+      }
+      const user = getQueryParams();
+      // 动态填充信息
+      window.onload = function() {
+        if(user.role) document.getElementById('role').textContent = user.role;
+        if(user.username) document.getElementById('username').textContent = user.username;
+        if(user.name) document.getElementById('name').textContent = user.name;
+        if(user.phone) document.getElementById('phone').textContent = user.phone;
+      };
+    </script>
+    <ul>
+      <li><b>角色：</b><span id="role">采购总经理</span></li>
+      <li><b>账号：</b><span id="username">demo</span></li>
+      <li><b>姓名：</b><span id="name">王经理</span></li>
+      <li><b>联系方式：</b><span id="phone">13900009999</span></li>
+    </ul>
+    <div class="tip">本页面内容可根据业务需求拓展更多设置项。</div>
+  </div>
+</body>
+</html> 

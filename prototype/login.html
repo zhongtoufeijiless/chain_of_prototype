@@ -44,8 +44,19 @@
     document.getElementById('loginForm').onsubmit = function(e) {
       e.preventDefault();
       const role = document.getElementById('role').value;
+      const username = document.getElementById('username').value;
+      // 假数据：角色与姓名映射
+      const roleMap = { manager: '采购总经理', dev: '资源开发', supplier: '供应商' };
+      const nameMap = { manager: '王经理', dev: '李开发', supplier: '李供应' };
       if (!role) { alert('请选择角色'); return; }
-      window.location.href = 'chat-home.html?role=' + role;
+      // 组装参数
+      const params = new URLSearchParams({
+        role: roleMap[role],
+        username: username,
+        name: nameMap[role],
+        phone: role === 'supplier' ? '13700008888' : '13900009999'
+      });
+      window.location.href = 'chat-home.html?' + params.toString();
     };
   </script>
 </body>
