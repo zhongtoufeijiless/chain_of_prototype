@@ -5,23 +5,11 @@
 
 ---
 
-## 快速体验
-- **本地预览**：推荐用 VSCode 插件 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 打开 `prototype/index.html`，即可交互体验所有原型页面。
-- **在线预览**（如已部署 GitHub Pages）：[点击这里体验原型](https://zhongtoufeijiless.github.io/chain_of_prototype/prototype/index.html)
+## 交互演示动图
 
----
+> 下方为本项目主要原型交互流程动图（GitHub 可直接预览）：
 
-## 原型图总览
-> 下图为本项目主要原型界面结构与流程总览（可用GoFullPage等工具截图生成）：
-
-![原型图总览](prototype/prototype-overview.png)
-
----
-
-## 交互演示视频
-> 下方为本项目主要原型交互流程录屏（如无法直接播放，可下载观看）：
-
-<video src="prototype/demo-record.mp4" controls width="720"></video>
+![交互演示动图](prototype/demo-record.gif)
 
 ---
 
